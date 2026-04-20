@@ -6,48 +6,47 @@
 ![Java](https://img.shields.io/badge/Java-Algorithms-007396?style=for-the-badge&logo=java&logoColor=white)
 ![USTHB](https://img.shields.io/badge/USTHB-FGE-9334e6?style=for-the-badge)
 
-[cite_start]Ce dépôt contient le projet complet (Code source Java et Interface Web Interactive) pour le **TP N°3 : Programmation des systèmes par les méthodes de POO**[cite: 5]. 
+Ce dépôt contient le projet complet (Code source Java et Interface Web Interactive) pour le **TP N°3 : Programmation des systèmes par les méthodes de POO**. 
 
 L'application modélise et résout le problème algorithmique du jeu "Saute-Mouton", en intégrant le code source de l'algorithme ainsi qu'une interface graphique moderne (thème Material/Google Pixel) dotée d'un moteur d'exécution en temps réel.
 
 ---
 
 ## 🎓 Contexte Académique
-* [cite_start]**Université :** Université des Sciences et de la Technologie HOUARI BOUMEDIENE - USTHB [cite: 1]
-* [cite_start]**Faculté :** Faculté de Génie Electrique FGE - Département d'Automatique [cite: 2]
-* [cite_start]**Module :** TP POO [cite: 3]
-* [cite_start]**Niveau & Spécialité :** Master 1 AII (Automatique) [cite: 4]
-* [cite_start]**Enseignant :** M. MENANI [cite: 38]
+* **Université :** Université des Sciences et de la Technologie HOUARI BOUMEDIENE - USTHB
+* **Faculté :** Faculté de Génie Electrique FGE - Département d'Automatique
+* **Module :** TP POO
+* **Niveau & Spécialité :** Master 1 AII (Automatique)
+* **Enseignant :** M. MENANI
 
 ---
 
 ## 🎯 Règles du Système Modélisé
 Le système est basé sur un plateau unidimensionnel avec des règles de transition strictes :
-* [cite_start]**Configuration initiale :** Des pions noirs sont placés à gauche et des pions rouges à droite, séparés par une case vide unique[cite: 64]. [cite_start]On pose autant de pions noirs que de pions rouges[cite: 65].
-* [cite_start]**Objectif :** Déplacer tous les pions rouges vers la gauche et tous les pions noirs vers la droite, la case vide occupant à la fin du jeu la case du milieu[cite: 67].
-* **Contraintes de déplacement :**
-  * [cite_start]Les pions noirs ne peuvent se déplacer que vers la droite[cite: 74].
-  * [cite_start]Les pions rouges ne peuvent se déplacer que vers la gauche[cite: 75].
-  * [cite_start]Un pion peut avancer d'une case si la case adjacente est vide[cite: 77, 82].
-  * [cite_start]Un pion peut sauter par-dessus un seul pion adverse si la case située juste après cet obstacle est vide[cite: 80, 83].
-* [cite_start]**Condition d'arrêt :** Le jeu s'arrête si la configuration finale est atteinte (victoire) ou si vous avez atteint une situation de blocage matériel (défaite)[cite: 97, 98].
+* **Configuration de départ :** Le plateau est initialisé avec les pièces noires à l'extrémité gauche et les rouges à droite. Un unique espace vide les sépare au centre. La symétrie est respectée (autant de pièces de chaque côté).
+* **Objectif final :** Inverser totalement le plateau pour ramener l'intégralité des pièces rouges à gauche et les noires à droite, avec l'espace vide de retour au centre.
+* **Mécanismes de déplacement :**
+  * Vecteurs directionnels : Avancée vers la droite pour les noirs, vers la gauche pour les rouges.
+  * Déplacement simple : Possible uniquement vers la case adjacente si celle-ci est libre.
+  * Saut : Autorisé par-dessus un unique obstacle de la faction adverse, à condition que la case de réception soit libre.
+* **Critères d'arrêt :** Le programme s'interrompt sur un succès (objectif atteint) ou sur une situation de blocage (plus aucun mouvement matériel n'est valide pour aucun pion).
 
 ---
 
 ## ✨ Fonctionnalités Principales
-* **Moteur Logique Strict :** L'algorithme vérifie rigoureusement chaque déplacement selon l'arbre de décision exigé par le cahier des charges.
-* **Détection de Deadlock :** Scan matériel complet du tableau à chaque itération pour identifier les situations de blocage irrémédiables.
-* **Architecture Web Monolithique :** Un fichier HTML/CSS/JS unique regroupant la théorie, le code Java syntaxiquement mis en valeur, et le simulateur interactif.
-* **Design "Google Pixel" :** Interface utilisateur soignée avec une palette de couleurs professionnelle (Bleu, Cyan, Violet), ombres dynamiques et typographie claire (`Roboto` / `Fira Code`).
-* **Console d'Exécution Temps Réel :** Panneau de débogage affichant l'historique des coups, les logs systèmes, les index de la mémoire et la détection d'erreurs en direct.
+* **Moteur Logique Strict :** L'algorithme valide rigoureusement chaque intention de mouvement selon l'arbre de décision.
+* **Détection de Deadlock :** Scan complet du tableau à chaque itération pour identifier les états de blocage irrémédiables.
+* **Architecture Web Monolithique :** Un fichier HTML/CSS/JS unique regroupant la théorie, le code Java formaté, et le simulateur interactif.
+* **Design "Google Pixel" :** Interface utilisateur soignée avec une palette de couleurs (Bleu, Cyan, Violet), ombres dynamiques et typographies claires.
+* **Console d'Exécution Temps Réel :** Panneau de débogage affichant l'historique des actions, les logs du système, et les alertes de violation de règles en direct.
 
 ---
 
 ## 🚀 Déploiement et Utilisation
-L'avantage de cette version "Ultimate" est qu'elle est prête à être déployée sur GitHub Pages et ne nécessite aucune compilation Java pour visualiser les résultats de la logique :
-1. Téléchargez le fichier `index.html`.
-2. Ouvrez-le simplement dans un navigateur web moderne (Chrome, Edge, Firefox, Safari).
-3. [cite_start]Utilisez le panneau de contrôle interactif pour tester l'algorithme : ajustez le nombre de pions (N maximum = 10 [cite: 136]) et cliquez sur les éléments pour simuler les déplacements en mémoire.
+Cette version est prête à être déployée (par exemple via GitHub Pages) et ne nécessite aucune compilation en ligne de commande pour visualiser le comportement logique :
+1. Récupérez le fichier `index.html`.
+2. Lancez-le dans n'importe quel navigateur web standard (Chrome, Edge, Firefox, Safari).
+3. Utilisez l'interface pour tester le système : paramétrez la taille (N jusqu'à 10) et manipulez les éléments pour simuler la mémoire.
 
 ---
 
